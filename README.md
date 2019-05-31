@@ -1,2 +1,1 @@
-# myProfile
-Play with github pages
+# React Profile
