@@ -1,0 +1,236 @@
+var express = require('express'); 
+var router = express.Router();
+
+/*
+* HTTP POST requests for http://localhost:3001/signin.
+*/
+router.post('/signin', function(req, res) {
+	var db = req.db;
+	var user_collection = db.get('userList');
+	var post_collection = db.get('postList');
+	var comment_collection = db.get('commentList');
+	var user_info = { 'name' : '', 'icon' : '', 'friends' : [] , 'msg' : ''} ;
+	res.set({
+        "Access-Control-Allow-Origin": "http://localhost:3000",
+    });  
+	var user = {'name': req.body.name, 'password': req.body.password};
+	user_collection.findOne(user,function(err,doc){
+		if (err === null){
+			if (doc === null){
+				res.send({msg: 'Login failure'});
+			}else{
+				// Part 1
+				res.cookie('userId', doc._id);
+				user_info.name = doc.name;
+				user_info.icon = doc.icon;
+				for (var {'friendId': i, 'starredOrNot': s} of doc.friends){
+					var fd = { 'info' : null, 'posts' : [], 'comments' : [] };
+					(function(fd){
+					user_collection.findOne({ '_id':i }, {'name':1, 'icon':1}, function(err, _doc){
+						if (err === null){
+							fd.info = {'_id': i, 'name' : _doc.name, 'icon': _doc.icon, 'starredOrNot': s};
+						}else{
+							res.send({msg: err});
+						}
+					});
+					})(fd);
+					(function(fd){
+					post_collection.find({'userId':i.toString()}, {'_id':1, 'time':1, 'location':1, 'content':1}, function(err, docs){
+						if (err === null){
+							fd.posts = docs;
+							var result = docs.map(a => a._id.toString());
+							comment_collection.find({'postId': {$in : result}, 'deleteTime':''}, {},function(err, docs){
+								if (err === null){
+									console.log(JSON.stringify(docs));
+									fd.comments = docs;
+								}else{
+									res.send({msg: err});
+								}
+							});
+						}else{
+							res.send({msg: err});
+						}
+					});
+					})(fd);	
+					user_info.friends.push(fd);
+				}
+				// Part 2
+				var date = new Date();
+				user_collection.update({'_id': doc._id} ,{$set: {'lastCommentRetrievalTime':date.toString()} }, function(err, result){
+					if (err === null){
+						// Part 3
+						//console.log("user_info = "+JSON.stringify(user_info));
+						res.json(user_info);
+					}else{
+						res.send({msg: err});
+					}
+				});
+				
+			}
+		}else res.send({msg: err});
+	}); 
+});
+
+/*
+* HTTP GET requests for http://localhost:3001/logout.
+*/
+router.get('/logout', function(req, res) {
+	var db = req.db;
+	var user_collection = db.get('userList');
+	res.set({
+        "Access-Control-Allow-Origin": "http://localhost:3000",
+    });  
+	user_collection.update({'_id': req.cookies.userId} ,{$set:{'lastCommentRetrievalTime':''}}, function(err, result){
+		if (err === null){
+			res.clearCookie('userId');
+			res.send({msg: ''});
+		}else{
+			res.send({msg: err});
+		}
+	});
+});
+
+/*
+* HTTP GET requests for http://localhost:3001/getuserprofile.
+*/
+router.get('/getuserprofile', function(req, res) {
+	var db = req.db;
+	var user_collection = db.get('userList');
+	res.set({
+        "Access-Control-Allow-Origin": "http://localhost:3000",
+    });  
+	user_collection.findOne({'_id':req.cookies.userId},{'mobileNumber':1, 'homeNumber':1, 'address':1},function(err,doc){
+		if (err === null){
+			res.json(doc);
+		}else{
+			res.send({msg: err});
+		}
+	});
+});
+
+/*
+* HTTP PUT requests for http://localhost:3001/saveuserprofile.
+*/
+router.put('/saveuserprofile', function (req, res) {
+	var db = req.db;
+	var user_collection = db.get('userList');
+	res.set({
+        "Access-Control-Allow-Origin": "http://localhost:3000",
+    });  
+	user_collection.update({'_id':req.cookies.userId}, {$set:req.body}, function(err, result){
+	    res.send(
+	        (err === null) ? { msg: '' } : { msg: err }
+	    );
+	});
+});
+
+/*
+* HTTP GET requests for http://localhost:3001/updatestar/:friendid.
+*/
+router.get('/updatestar/:friendid', function(req, res) {
+	var db = req.db;
+	var user_collection = db.get('userList');
+	res.set({
+        "Access-Control-Allow-Origin": "http://localhost:3000",
+    });  
+	var fid = req.params.friendid;
+	user_collection.findOne({'_id':req.cookies.userId}, {'friends': {$elemMatch: {'friendId': fid}}},function(err,doc){
+		if (err === null){
+			var new_change = (doc.starredOrNot == 'N') ? 'Y' : 'N';
+			user_collection.update({'_id':req.cookies.userId, 'friends': {$elemMatch: {'friendId': fid}}}, {$set: {'friends.$.starredOrNot':new_change}},function(err,result){
+	    		res.send(
+	        		(err === null) ? { msg: '' } : { msg: err }
+	    		);
+			});
+		}else{
+			res.send({msg: err});
+		}
+	});
+});
+
+/*
+* HTTP POST requests for http://localhost:3001/postcomment/:postid
+*/
+router.post('/postcomment/:postid', function(req, res) {
+	var db = req.db;
+	var comment_collection = db.get('commentList');
+	res.set({
+        "Access-Control-Allow-Origin": "http://localhost:3000",
+    });  
+	var post_id = req.params.postid;
+	var date = new Date();
+	comment_collection.insert({'postId': post_id, 'userId':req.cookies.userId, 'postTime':date.toString(), 'comment': req.body.comment, 'deleteTime': ''},function(err,result){
+		res.send(
+	        (err === null) ? { msg: '' } : { msg: err }
+	    );
+	});
+});
+
+/*
+* HTTP DELETE requests for http://localhost:3001/deletecomment/:commentid
+*/
+router.delete('/deletecomment/:commentid', function(req, res) {
+	var db = req.db;
+	var comment_collection = db.get('commentList');
+	res.set({
+        "Access-Control-Allow-Origin": "http://localhost:3000",
+    });  
+	var cid = req.params.commentid;
+	var date = new Date();
+	comment_collection.update({'_id':cid}, {$set:{'deleteTime': date.toString()}},function(err, result){
+	    res.send(
+	        (err === null) ? { msg: '' } : { msg: err }
+	    );
+	});
+});
+
+/*
+* HTTP GET requests for http://localhost:3001/loadcommentupdates.
+*/
+router.get('/loadcommentupdates', function(req, res) {
+	var db = req.db;
+	var user_collection = db.get('userList');
+	var post_collection = db.get('postList');
+	var comment_collection = db.get('commentList');
+	res.set({
+        "Access-Control-Allow-Origin": "http://localhost:3000",
+    });  
+	user_collection.findOne({'_id':req.cookies.userId},{'lastCommentRetrievalTime':1, 'friends':1}, function(err, doc){
+		if (err === null){
+			const db_time = new Date(doc.lastCommentRetrievalTime);
+			for (var {friendId: i, starredOrNot: s} of doc.friends){
+				var new_cmd = []; var del_cmd = [];
+				post_collection.find({'userId': i}, {'_id':1}, function(err, docs){
+						for (var {_id : pid} of docs){
+							comment_collection.find({'userId': i}, function(err, _docs){
+								if (err === null){
+									//check comments
+									for (var d of _docs){
+										if (d.deleteTime == ''){
+											var c_date = new Date(d.postTime);
+											if(c_date >= db_time){
+												new_cmd.push(d);
+											}
+										}else{
+											var d_date = new Date(d.deleteTime);
+											if(d_date >= db_time){
+												del_cmd.push(d._id);
+											}
+										}
+									}
+									res.json({new_comments: new_cmd, delete_comments: del_cmd});
+								}else{
+									res.send({msg: err});
+								}
+							});
+						}
+					});
+			}
+		}else{
+			res.send({msg: err});
+		}
+	});
+	
+});
+
+module.exports = router;
