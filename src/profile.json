@@ -1,7 +1,7 @@
 
 {
   "title": "Graduated Student",
-  "summary": "I am passionate about designing solutions using technology.",
+  "summary": "I am passionate about designing technical solutions to real life problems.",
   "studies": [
     {
       "institute": "The University of Hong Kong",
@@ -15,6 +15,14 @@
   "certifications": [
 
   ],
+  "projects" : [
+    {
+      "projectName": "FYP",
+      "logo": "N/A",
+      "url": "To github",
+      "description": "wt is it"
+    }
+  ],
   "experiences": [
     {
       "companyName": "Messer Financial Software Limited",
@@ -23,9 +31,10 @@
       "roles": [
         {
           "title": "Computer Science Intern",
-          "description": "Python Programming with pandas package",
+          "description": "Do programming tasks with pandas",
           "startDate": "2018-06-04",
           "currentJob": false,
+          "endDate": "2018-08-31",
           "location": "Hong Kong"
         }
       ]

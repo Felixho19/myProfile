@@ -2,7 +2,8 @@ import React from 'react';
 import {Jumbotron, Container, TabContent, TabPane, Nav, NavItem, NavLink } from "reactstrap";
 import classnames from 'classnames';
 import Experience from "./Experience";
-import Education from './Education'
+import Education from './Education';
+import Project from './Project';
 import profile from '../profile.json'
 
 class Profile extends React.Component {
@@ -27,7 +28,7 @@ class Profile extends React.Component {
     return <div>
       <Jumbotron>
         <Container>
-          <h1 className="display-3">{profile.title}</h1>
+          <h1 className="display-3">Current: {profile.title}</h1>
           <p className="lead">{profile.summary}</p>
         </Container>
       </Jumbotron>
@@ -46,6 +47,12 @@ class Profile extends React.Component {
               Education
             </NavLink>
           </NavItem>
+          <NavItem>
+            <NavLink className={classnames({ active: this.state.activeTab === '3' })}
+                     onClick={() => { this.toggle('3'); }}>
+              Projects
+            </NavLink>
+          </NavItem>
         </Nav>
         <TabContent activeTab={this.state.activeTab}>
           <TabPane tabId="1">
@@ -53,6 +60,9 @@ class Profile extends React.Component {
           </TabPane>
           <TabPane tabId="2">
             <Education/>
+          </TabPane>
+          <TabPane tabId="3">
+            <Project/>
           </TabPane>
         </TabContent>
       </Container>

@@ -49,37 +49,39 @@ class Education extends React.Component {
       </Row>
       <br/>
       <br/>
-      <Row>
-        <Col>
-          <h4>Certifications:</h4>
-          <hr/>
-          {profile.certifications.map(function (certification, i) {
-            const verification = certification.verificationLink ?
-              <Row>
-                <Col>
-                  <a className="certificateLink" href={certification.verificationLink}>See certificate</a>
-                </Col>
-              </Row> : "";
-            return <Media key={i}>
-              <Media left top href={certification.url}>
-                <Media object src={certification.logo} alt={certification.title}/>
-              </Media>
-              <Media body>
-                <Media heading>
-                  <a href={certification.url}>{certification.title}</a>
+      {profile.certifications.length == 0 ? null :
+        <Row>
+          <Col>
+            <h4>Certifications:</h4>
+            <hr/>
+            {profile.certifications.map(function (certification, i) {
+              const verification = certification.verificationLink ?
+                <Row>
+                  <Col>
+                    <a className="certificateLink" href={certification.verificationLink}>See certificate</a>
+                  </Col>
+                </Row> : "";
+              return <Media key={i}>
+                <Media left top href={certification.url}>
+                  <Media object src={certification.logo} alt={certification.title}/>
                 </Media>
-                <Row>
-                  <Col>{moment(certification.issueDate).format('MMM YYYY')} - {(certification.expiryDate) ? moment(certification.expiryDate).format('MMM YYYY') : 'Present'}</Col>
-                </Row>
-                <Row>
-                  <Col>{certification.issuer}</Col>
-                </Row>
-                {verification}
+                <Media body>
+                  <Media heading>
+                    <a href={certification.url}>{certification.title}</a>
+                  </Media>
+                  <Row>
+                    <Col>{moment(certification.issueDate).format('MMM YYYY')} - {(certification.expiryDate) ? moment(certification.expiryDate).format('MMM YYYY') : 'Present'}</Col>
+                  </Row>
+                  <Row>
+                    <Col>{certification.issuer}</Col>
+                  </Row>
+                  {verification}
+                </Media>
               </Media>
-            </Media>
-          })}
-        </Col>
-      </Row>
+            })}
+          </Col>
+        </Row>
+      }
     </Container>
   }
 }
