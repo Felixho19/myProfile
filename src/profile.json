@@ -5,7 +5,7 @@
   "studies": [
     {
       "institute": "The University of Hong Kong",
-      "logo": "https://hku.hk/assets/img/hku-logo.png",
+      "logo": "images/hku-logo.png",
       "url": "http://www.hku.hk/",
       "title": "Bachelor on Computer Science",
       "durationInYears": "4",
@@ -17,21 +17,21 @@
   ],
   "projects" : [
     {
-      "projectName": "FYP",
-      "logo": "N/A",
-      "url": "To github",
-      "description": "wt is it"
+      "projectName": "Template",
+      "logo": "images/template-logo.png",
+      "url": "#temp",
+      "description": "description"
     }
   ],
   "experiences": [
     {
-      "companyName": "Messer Financial Software Limited",
-      "logo": "https://messerfs.com/wp-content/uploads/2018/04/WhiteMesser198x50.png",
-      "url": "https://messerfs.com/",
+      "companyName": "Template",
+      "logo": "images/template-logo.png",
+      "url": "#temp",
       "roles": [
         {
           "title": "Computer Science Intern",
-          "description": "Do programming tasks with pandas",
+          "description": "Description",
           "startDate": "2018-06-04",
           "currentJob": false,
           "endDate": "2018-08-31",
