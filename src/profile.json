@@ -1,7 +1,7 @@
 
 {
-  "title": "Graduated Student",
-  "summary": "I am passionate about designing technical solutions to real life problems.",
+  "title": "",
+  "summary": "I work as a software engineer for agile software projects, design/develop and handle CI/CD solutions.",
   "studies": [
     {
       "institute": "The University of Hong Kong",
@@ -17,25 +17,60 @@
   ],
   "projects" : [
     {
-      "projectName": "Template",
-      "logo": "images/template-logo.png",
-      "url": "#temp",
-      "description": "description"
+      "projectName": "Anti-Emulator plugin for cuckoodroid using Frida.",
+      "logo": "/images/cuckoodroid.png",
+      "url": "https://github.com/Felixho19/CuckooWithFrida",
+      "description": "Cuckoodroid is using to perform malware analysis for android platform. The anti-emulator plugin is one of the key functions that required to run because of common malware behaviour. This project attempts to observe the possibility to generalize this feature with more emulating options."
+    },
+    {
+      "projectName": "Tutoria - Tutor-broking system",
+      "logo": "/images/Endeavor.jpg",
+      "url": "https://github.com/Felixho19/Tutoria",
+      "description": "It was a group assignment for software engineering course in 2nd semester and done in 2017. I was resposnible for the booking system."
+    },
+    {
+      "projectName": "SG airline app challenge for lounge services",
+      "logo": "/images/sghack.png",
+      "url": "https://felixho19.github.io/SGapp/",
+      "description": "An innovative all-in-one application providing personalised dining services by tracking the utilisation of space, analysing nutritional content of various dishes and collecting data on meal consumption for improving customers’ experience. This is demo web app."
     }
   ],
   "experiences": [
     {
-      "companyName": "Template",
-      "logo": "images/template-logo.png",
-      "url": "#temp",
-      "roles": [
+      "skillName": "Python",
+      "logo": "images/python.jpg",
+      "url": "https://www.python.org/downloads/",
+      "items": [
         {
-          "title": "Computer Science Intern",
-          "description": "Description",
-          "startDate": "2018-06-04",
-          "currentJob": false,
-          "endDate": "2018-08-31",
-          "location": "Hong Kong"
+          "purpose": "AI assignment",
+          "description": "A simple othello game with alpha-beta pruning concept, and tkinter GUI.",
+          "date": "2017",
+          "framework": "tkinter"
+        },
+        {
+          "purpose": "Group assignment",
+          "description": "Built a web platform with Django backend to handling private tutoring booking.",
+          "date": "2017",
+          "framework": "Django"
+        }
+      ]
+    },
+    {
+      "skillName": "Python",
+      "logo": "images/python.jpg",
+      "url": "https://www.python.org/downloads/",
+      "items": [
+        {
+          "purpose": "AI assignment",
+          "description": "No language limitation so I have tried to use Python was creating a simple othello game with alpha-beta pruning concept, and tkinter GUI.",
+          "date": "2017",
+          "framework": "tkinter"
+        },
+        {
+          "purpose": "Group assignment",
+          "description": "Built a web platform with Django backend to handling private tutoring booking.",
+          "date": "2017",
+          "framework": "Django"
         }
       ]
     }

@@ -54,9 +54,19 @@ footer {
   text-align: center;
 }
 
+.greeting {
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
 footer a {
   color: black;
   font-size: 30px;
   margin-right: 10px;
+  margin-left: 10px;
+}
+
+.topBar {
+  font-family: "Comic Sans MS", cursive, sans-serif;
   margin-left: 10px;
 }

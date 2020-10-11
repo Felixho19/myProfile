@@ -21,7 +21,9 @@ class TopBar extends React.Component {
   render() {
     return (
     <Navbar bg="light" expand="lg">
-      <Navbar.Brand href="#home">{this.state.name}</Navbar.Brand>
+      <Navbar.Brand href="#home">
+      <span className="topBar">{this.state.name}</span>
+      </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
       </Navbar.Collapse>

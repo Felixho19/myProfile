@@ -5,6 +5,7 @@ import Experience from "./Experience";
 import Education from './Education';
 import Project from './Project';
 import profile from '../profile.json'
+import Greetings from './Greetings';
 
 class Profile extends React.Component {
   constructor(props) {
@@ -12,7 +13,7 @@ class Profile extends React.Component {
 
     this.toggle = this.toggle.bind(this);
     this.state = {
-      activeTab: '1'
+      activeTab: '0'
     };
   }
 
@@ -36,9 +37,16 @@ class Profile extends React.Component {
       <Container>
         <Nav tabs>
           <NavItem>
+            <NavLink className={classnames({ active: this.state.activeTab === '0' })}
+                     onClick={() => { this.toggle('0'); }}>
+              Greetings
+            </NavLink>
+          </NavItem>
+          {/* A JSX comment 
+          <NavItem>
             <NavLink className={classnames({ active: this.state.activeTab === '1' })}
                      onClick={() => { this.toggle('1'); }}>
-              Experience
+              Coding Experience
             </NavLink>
           </NavItem>
           <NavItem>
@@ -47,6 +55,7 @@ class Profile extends React.Component {
               Education
             </NavLink>
           </NavItem>
+          */}
           <NavItem>
             <NavLink className={classnames({ active: this.state.activeTab === '3' })}
                      onClick={() => { this.toggle('3'); }}>
@@ -55,12 +64,17 @@ class Profile extends React.Component {
           </NavItem>
         </Nav>
         <TabContent activeTab={this.state.activeTab}>
+          <TabPane tabId="0">
+            <Greetings/>
+          </TabPane>
+          {/*
           <TabPane tabId="1">
             <Experience/>
           </TabPane>
           <TabPane tabId="2">
             <Education/>
           </TabPane>
+          */}
           <TabPane tabId="3">
             <Project/>
           </TabPane>
