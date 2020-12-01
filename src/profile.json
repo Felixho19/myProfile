@@ -16,11 +16,18 @@
   ],
   "projects" : [
     {
-      "projectName": "Anti-Emulator plugin for cuckoodroid using Frida",
+      "projectName": "Anti-Emulator plugin for Cuckoodroid by Frida",
       "logo": "/images/cuckoodroid.png",
       "url": "https://github.com/Felixho19/CuckooWithFrida",
       "description": "Cuckoodroid is using to perform malware analysis for the android platform. The anti-emulator plugin is a key required to run since most malware behaviors aren't run in the emulator. This project attempts to observe the possibility to implement this feature with more emulation options.",
       "stacks" : ["Python 2 and 3", "Android", "MongoDB"]
+    },
+    {
+      "projectName": "GoGoCoach",
+      "logo": "/images/gogocoach_icon.png",
+      "url": "https://github.com/Felixho19/go-go-coach",
+      "description": "An Android appliction for matching users and coaches, based on Geolocation.",
+      "stacks" : ["Android", "Firebase", "Google API"]
     },
     {
       "projectName": "Tutoria - Tutor-broking system for university students",
@@ -39,40 +46,24 @@
   ],
   "experiences": [
     {
-      "skillName": "Python",
-      "logo": "images/python.jpg",
-      "url": "https://www.python.org/downloads/",
-      "items": [
+      "company": "PCCW Solutions Ltd",
+      "url": "https://www.pccwsolutions.com/site/en/home",
+      "roles": [
         {
-          "purpose": "AI assignment",
-          "description": "A simple othello game with alpha-beta pruning concept, and tkinter GUI.",
-          "date": "2017",
-          "framework": "tkinter"
-        },
-        {
-          "purpose": "Group assignment",
-          "description": "Built a web platform with Django backend to handling private tutoring booking.",
-          "date": "2017",
-          "framework": "Django"
+          "title": "Graduate Trainee",
+          "start_date": "Aug 2019",
+          "end_date": "Current"
         }
       ]
     },
     {
-      "skillName": "Python",
-      "logo": "images/python.jpg",
-      "url": "https://www.python.org/downloads/",
-      "items": [
+      "company": "Messer Financial Software Ltd",
+      "url": "https://messerfs.com/",
+      "roles": [
         {
-          "purpose": "AI assignment",
-          "description": "No language limitation so I have tried to use Python was creating a simple othello game with alpha-beta pruning concept, and tkinter GUI.",
-          "date": "2017",
-          "framework": "tkinter"
-        },
-        {
-          "purpose": "Group assignment",
-          "description": "Built a web platform with Django backend to handling private tutoring booking.",
-          "date": "2017",
-          "framework": "Django"
+          "title": "3-month Computer Science Intern",
+          "start_date": "Jun 2018",
+          "end_date": "Aug 2018"
         }
       ]
     }

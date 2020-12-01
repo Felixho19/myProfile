@@ -9,8 +9,8 @@ class Footer extends React.Component {
       <footer>
         <hr/>
         <Container>
-          <a href="https://www.linkedin.com/in/felix-ho-b69878155/"><FontAwesomeIcon icon={faLinkedin} /></a>
-          <a href="https://github.com/Felixho19"><FontAwesomeIcon icon={faGithub}  /></a>
+          <a href="https://www.linkedin.com/in/felix-ho-b69878155/" rel="noopener noreferrer" target="_blank"><FontAwesomeIcon icon={faLinkedin} /></a>
+          <a href="https://github.com/Felixho19" rel="noopener noreferrer" target="_blank"><FontAwesomeIcon icon={faGithub}  /></a>
         </Container>
       </footer>
     )
