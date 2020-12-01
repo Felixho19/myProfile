@@ -8,35 +8,30 @@ a {
   color: #343a40;
 }
 
+.banner {
+  color: rgb(0, 0, 0);
+}
+
+.desc {
+  text-shadow: #343a40;
+  font-weight: bolder;
+  color: rgb(0, 0, 0);
+}
+
+@media only screen and (max-width: 600px) {
+  .desc {
+    text-shadow: #343a40;
+    font-weight: bolder;
+    color: rgb(75, 175, 36);
+  }
+  .mask{
+    background-color: steelblue;
+  }
+} 
+
 a:hover {
   color: #173798;
   text-decoration: none;
-}
-
-div.media {
-  margin-top: 30px;
-  margin-bottom: 10px;
-}
-
-div.media .media-heading .jobTotalDuration {
-  color: #666;
-  font-size: 14px;
-  display: block;
-}
-
-div.media img {
-  height: 10vmin;
-  margin-right: 10px;
-  border-radius: 50px;
-}
-
-div.media .jobDuration {
-  color: #444;
-  display: block;
-}
-
-div.media .jobLocation {
-  color: #666;
 }
 
 .formLabel {
@@ -80,6 +75,7 @@ footer a {
 .jumbotron {
   background-image: url("./images/banner-bg.jpg");
   background-size: cover;
+  overflow: hidden;
 }
 
 .cardImage {
