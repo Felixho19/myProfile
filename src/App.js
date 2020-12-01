@@ -1,15 +1,19 @@
 import React, { Component } from 'react';
 import './App.css';
-import TopBar from './components/TopBar';
-import Profile from './components/Profile';
+import Pages from './components/Pages';
 import Footer from './components/Footer';
 
 class App extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+       webSiteName : "Felix's personal website"
+    };
+  }
   render() {
     return (
       <div className="App">
-        <TopBar />
-        <Profile />
+        <Pages />
         <Footer />
       </div>
     );

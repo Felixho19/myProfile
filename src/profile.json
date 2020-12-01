@@ -1,7 +1,6 @@
 
 {
   "title": "",
-  "summary": "I work as a software engineer for agile software projects, design/develop and handle CI/CD solutions.",
   "studies": [
     {
       "institute": "The University of Hong Kong",
@@ -17,22 +16,25 @@
   ],
   "projects" : [
     {
-      "projectName": "Anti-Emulator plugin for cuckoodroid using Frida.",
+      "projectName": "Anti-Emulator plugin for cuckoodroid using Frida",
       "logo": "/images/cuckoodroid.png",
       "url": "https://github.com/Felixho19/CuckooWithFrida",
-      "description": "Cuckoodroid is using to perform malware analysis for android platform. The anti-emulator plugin is one of the key functions that required to run because of common malware behaviour. This project attempts to observe the possibility to generalize this feature with more emulating options."
+      "description": "Cuckoodroid is using to perform malware analysis for the android platform. The anti-emulator plugin is a key required to run since most malware behaviors aren't run in the emulator. This project attempts to observe the possibility to implement this feature with more emulation options.",
+      "stacks" : ["Python 2 and 3", "Android", "MongoDB"]
     },
     {
-      "projectName": "Tutoria - Tutor-broking system",
+      "projectName": "Tutoria - Tutor-broking system for university students",
       "logo": "/images/Endeavor.jpg",
       "url": "https://github.com/Felixho19/Tutoria",
-      "description": "It was a group assignment for software engineering course in 2nd semester and done in 2017. I was resposnible for the booking system."
+      "description": "It was a group assignment for a software engineering course in the 2nd semester and done in 2017. I was responsible for the booking system.",
+      "stacks" : ["Django Web framwork", "JQuery", "SQlite"]
     },
     {
       "projectName": "SG airline app challenge for lounge services",
       "logo": "/images/sghack.png",
       "url": "https://felixho19.github.io/SGapp/",
-      "description": "An innovative all-in-one application providing personalised dining services by tracking the utilisation of space, analysing nutritional content of various dishes and collecting data on meal consumption for improving customers’ experience. This is demo web app."
+      "description": "A demo application of personalized dining services: Tracking the utilization of space; Analyzing the dishes' nutritional content; Collecting data on meal consumption for improving customer experience.",
+      "stacks" : ["ReactJS", "Bootstrap", "Material-UI"]
     }
   ],
   "experiences": [

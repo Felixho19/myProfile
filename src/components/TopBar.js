@@ -1,35 +1,13 @@
 import React from 'react';
-import {Nav, Navbar, NavDropdown, Form, FormControl, Button} from 'react-bootstrap';
+import {Navbar} from 'react-bootstrap';
 
-class TopBar extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.toggle = this.toggle.bind(this);
-    this.state = {
-      isOpen: false,
-      name: "Felix"
-    };
-  }
-
-  toggle() {
-    this.setState({
-      isOpen: !this.state.isOpen
-    });
-  }
-
-  render() {
-    return (
+// Functional Component
+export default function TopBar({name}){
+  return (
     <Navbar bg="light" expand="lg">
-      <Navbar.Brand href="#home">
-      <span className="topBar">{this.state.name}</span>
+      <Navbar.Brand>
+        <span className="topBar">{name}</span>
       </Navbar.Brand>
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse id="basic-navbar-nav">
-      </Navbar.Collapse>
     </Navbar>
-    );
-  }
+  );
 }
-
-export default TopBar;

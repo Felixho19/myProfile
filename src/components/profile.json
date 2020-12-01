@@ -1,0 +1,51 @@
+{
+    "skills": [
+        {
+            "name" : "Spoken Languages",
+            "items" : [
+                "Cantonese: Native",
+                "English: Business",
+                "Japanese: Basic"
+            ]
+        },
+        {
+            "name" : "Programming Languages",
+            "items" : [
+                "Python 2/3",
+                "C/C++",
+                "Java 8",
+                "Haskell",
+                "JavaScript ES6",
+                "Bash",
+                "SQL",
+                "PHP"
+            ]
+        },
+        {
+            "name" : "Web development",
+            "items" : [
+                "Web frontend framework: ReactJS, Vue.js, Angular.js, JQuery",
+                "Web backend framework: Django, Flask",
+                "HTML5, CSS",
+                "MERN Stack",
+                "XAMPP"
+            ]
+        },
+        {
+            "name" : "Mobile development",
+            "items" : [
+                "Android app (Java)",
+                "Firebase"
+            ]
+        },
+        {
+            "name" : "DevOps",
+            "items" : [
+                "Version Control: Git",
+                "Cloud Platform: AWS, Azure",
+                "CI/CD: Jenkins, ansible-playbook",
+                "Docker"
+            ]
+        }
+    ]
+}
