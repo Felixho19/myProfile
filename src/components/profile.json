@@ -22,6 +22,13 @@
             ]
         },
         {
+            "name" : "Messaging middleware",
+            "items" : [
+                "Apache Kafka",
+                "Solace PubSub+"
+            ]
+        },
+        {
             "name" : "Web development",
             "items" : [
                 "Web frontend framework: React, Vue.js, Angular.js, JQuery",

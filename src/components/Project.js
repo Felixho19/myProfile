@@ -4,10 +4,9 @@ import { Card, CardDeck } from "react-bootstrap";
 
 class Project extends React.Component {
   render() {
-    return <CardDeck className="card-deck">
+    return <CardDeck className="card-deck pages">
           {profile.projects.map(function (project, i) {
             return (
-              
                 <Card key={i} className="card mb-4" style={{width: '18rem'}}>
                     <Card.Img className="cardImage" varient="top" src={process.env.PUBLIC_URL+project.logo} alt={project.projectName}/>
                     <Card.Body>
@@ -31,5 +30,4 @@ class Project extends React.Component {
         </CardDeck>
   }
 }
-
 export default Project;

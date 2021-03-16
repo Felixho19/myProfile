@@ -1,5 +1,5 @@
 import React from 'react';
-import {Container, TabContent, TabPane, Nav, NavItem, NavLink } from "reactstrap";
+import {TabContent, TabPane, Nav, NavItem, NavLink } from "reactstrap";
 import Project from './Project';
 import Banner from './Banner';
 import Greetings from './Greetings';
@@ -24,11 +24,9 @@ class Pages extends React.Component {
   }
   render() {
     return <div>
-      <Banner />
-      <Container>
-        <Navbar bg="light" expand="lg">
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
+        <Navbar className="navbar" bg="light" expand="lg">
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <Navbar.Collapse id="responsive-navbar-nav">
             <Nav tabs>
               <NavItem>
                 <NavLink id="0" onClick={this.toggle}>
@@ -48,6 +46,7 @@ class Pages extends React.Component {
             </Nav>
           </Navbar.Collapse>
         </Navbar>
+        <Banner />
         <TabContent activeTab={this.state.activeTab}>
           <TabPane tabId="0">
             <Greetings/>
@@ -59,7 +58,6 @@ class Pages extends React.Component {
             <Profile/>
           </TabPane>
         </TabContent>
-      </Container>
     </div>;
   }
 }

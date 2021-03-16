@@ -34,7 +34,7 @@
       "logo": "/images/Endeavor.jpg",
       "url": "https://github.com/Felixho19/Tutoria",
       "description": "It was a group assignment for a software engineering course in the 2nd semester and done in 2017. I was responsible for the booking system.",
-      "stacks" : ["Django Web framwork", "JQuery", "SQlite"]
+      "stacks" : ["Django", "JQuery", "SQlite"]
     },
     {
       "projectName": "SG airline app challenge for lounge services",

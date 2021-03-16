@@ -1,83 +1,38 @@
-.profile-pic {
-  height: 4vmin;
-  margin-right: 10px;
-  border-radius: 50px;
-}
-
+/* Common */
 a {
   color: #343a40;
 }
-
-.banner {
-  color: rgb(0, 0, 0);
-}
-
-.desc {
-  text-shadow: #343a40;
-  color: rgb(0, 0, 0);
-}
-
-@media only screen and (max-width: 600px) {
-  .desc {
-    text-shadow: #343a40;
-    font-weight: bolder;
-    color: rgb(75, 175, 36);
-  }
-  .mask{
-    background-color: steelblue;
-  }
-} 
-
 a:hover {
   color: #173798;
   text-decoration: none;
 }
 
-.formLabel {
-  font-weight: bold;
+/* Banner */
+.banner {
+  color: rgb(0, 0, 0);
+  font-size: 4.5rem;
+  font-weight: 300;
+  line-height: 1.2;
 }
-
-.certificateLink {
-  color: cornflowerblue;
+.desc {
+  text-shadow: #343a40;
+  color: rgb(0, 0, 0);
 }
-
-footer {
-  margin-top: 20px;
-  margin-bottom: 10px;
-  border-top: #444444;
-  text-align: center;
-}
-
-.greeting {
-  margin-top: 20px;
-  margin-left: 20px;
-}
-
-footer a {
-  color: black;
-  font-size: 30px;
-  margin-right: 10px;
-  margin-left: 10px;
-}
-
-.topBar {
-  font-family: "Comic Sans MS", cursive, sans-serif;
-  margin-left: 10px;
-}
-
-.page {
-  font-family: "Comic Sans MS", cursive, sans-serif;
-  margin-left: 10px;
-  margin-top: 10px;
-}
-
 .jumbotron {
   background-image: url("./images/banner-bg.jpg");
   background-size: cover;
   overflow: hidden;
 }
 
+/* Greetings */
+.greeting {
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+/* Projects */
 .cardImage {
+  margin: 1px;
   border-radius: 55;
   height: 6rem;
 }
@@ -97,3 +52,47 @@ footer a {
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   grid-gap: .5rem;
 }
+
+/* Profile */
+.page {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+/* Footer */
+footer {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  border-top: #444444;
+  text-align: center;
+}
+footer a {
+  color: black;
+  font-size: 30px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+/* For mobile screen */
+@media only screen and (max-width: 600px) {
+  /* Banner */
+  .desc {
+    display: none;
+  }
+  .banner {
+    color: rgb(0, 0, 0);
+    font-size: 2rem;
+    font-weight: 10;
+    line-height: 1;
+  }
+  /* Greetings */
+  /* Projects */
+  .page {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+  }
+  /* Profile */
+} 

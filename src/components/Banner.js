@@ -3,13 +3,13 @@ import {Jumbotron, Container } from "reactstrap";
 
 export default function Banner(){
     return (
-    <Jumbotron>
-        <Container>
-            <h1 className="banner display-3">Felix Ho</h1>
-            <div className="mask">
-                <p className="desc">I am a software developer from Hong Kong</p>
-            </div>
-        </Container>
-    </Jumbotron>
+        <Jumbotron>
+            <Container>
+                <h1 className="banner">Felix Ho</h1>
+                <div>
+                    <p className="desc">Open for software engineer opportunities</p>
+                </div>
+            </Container>
+        </Jumbotron>
     );
 }
