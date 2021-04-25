@@ -18,6 +18,8 @@
     {
       "projectName": "Anti-Emulator plugin for Cuckoodroid by Frida",
       "logo": "/images/cuckoodroid.png",
+      "owner": "Felixho19",
+      "repo": "CuckooWithFrida",
       "url": "https://github.com/Felixho19/CuckooWithFrida",
       "description": "Cuckoodroid is using to perform malware analysis for the android platform. The anti-emulator plugin is a key required to run since most malware behaviors aren't run in the emulator. This project attempts to observe the possibility to implement this feature with more emulation options.",
       "stacks" : ["Python 2 and 3", "Android", "MongoDB"]
@@ -25,6 +27,8 @@
     {
       "projectName": "GoGoCoach",
       "logo": "/images/gogocoach_icon.png",
+      "owner": "Felixho19",
+      "repo": "go-go-coach",
       "url": "https://github.com/Felixho19/go-go-coach",
       "description": "An Android appliction for matching users and coaches, based on Geolocation.",
       "stacks" : ["Android", "Firebase", "Google API"]
@@ -32,6 +36,8 @@
     {
       "projectName": "Tutoria - Tutor-broking system for university students",
       "logo": "/images/Endeavor.jpg",
+      "owner": "Felixho19",
+      "repo": "Tutoria",
       "url": "https://github.com/Felixho19/Tutoria",
       "description": "It was a group assignment for a software engineering course in the 2nd semester and done in 2017. I was responsible for the booking system.",
       "stacks" : ["Django", "JQuery", "SQlite"]
@@ -39,6 +45,8 @@
     {
       "projectName": "SG airline app challenge for lounge services",
       "logo": "/images/sghack.png",
+      "owner": "Felixho19",
+      "repo": "SGapp",
       "url": "https://felixho19.github.io/SGapp/",
       "description": "A demo application of personalized dining services: Tracking the utilization of space; Analyzing the dishes' nutritional content; Collecting data on meal consumption for improving customer experience.",
       "stacks" : ["ReactJS", "Bootstrap", "Material-UI"]

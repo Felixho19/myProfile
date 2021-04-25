@@ -35,12 +35,12 @@ class Pages extends React.Component {
               </NavItem>
               <NavItem>
                 <NavLink id="1" onClick={this.toggle}>
-                  Selected Projects
+                  Github Project Galley
                 </NavLink>
               </NavItem>
               <NavItem>
                 <NavLink id="2" onClick={this.toggle}>
-                  Profiles
+                  Skills Profile
                 </NavLink>
               </NavItem>
             </Nav>
