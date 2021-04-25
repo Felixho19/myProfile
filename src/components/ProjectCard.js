@@ -1,28 +1,32 @@
 import { Card } from "react-bootstrap";
 import React, { useState, useEffect } from 'react';
-import { Octokit } from "@octokit/core";
 // get our fontawesome imports
 import { faEye, faStar } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const octokit = new Octokit({ auth: "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"});
-
 export default function ProjectCard(props){
     const {project, key} = props;
-    const delaySecond = 5;
+    const delaySecond = 1;
     const [starCount, setStarCount] = useState(0);
     const [watchCount, setWatchCount] = useState(0);
+
     useEffect(() => {
       let timer1 = setTimeout(() => {
-          octokit.request("GET /repos/{owner}/{repo}", {
-            owner: project.owner,
-            repo: project.repo,
+          fetch("https://ncyr2o8m84.execute-api.us-east-2.amazonaws.com/default/getFelixPublicGitHubInfo?repo=" + project.repo, {
+            method: 'GET',
           }).then((response) => {
-            if(response.status === 200){
-              setStarCount(response.data.stargazers_count);
-              setWatchCount(response.data.watchers_count);
-            }
-          });
+              if (response.status !== 200) {
+                console.log('Looks like there was a problem. Status Code: ' + response.status);
+                return;
+              }
+              response.json().then((data) => {
+                console.log(data);
+                setStarCount(data.starCount);
+                setWatchCount(data.watchCount);
+              });
+          }).catch((err) => {
+            console.error(err);
+          });;
       }, delaySecond * 1000);
       // this will clear Timeout
       // when component unmount like in willComponentUnmount

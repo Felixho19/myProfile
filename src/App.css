@@ -38,17 +38,10 @@ a:hover {
 }
 .card-deck .card {
   padding: 2em;
-}s
-.card-deck .card:not(:last-child) {
-  margin-right: 15px;
 }
-.card-deck .card:not(:first-child) {
-  margin-left: 15px;
-}
+
 .card-deck {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 4fr));
-  grid-gap: .5rem;
+  display: flex;
   margin-right: 5%;
   margin-left: 5%;
 }
