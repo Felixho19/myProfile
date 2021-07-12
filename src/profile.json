@@ -21,8 +21,8 @@
       "owner": "Felixho19",
       "repo": "CuckooWithFrida",
       "url": "https://github.com/Felixho19/CuckooWithFrida",
-      "description": "Cuckoodroid is using to perform malware analysis for the android platform. This project attempts to observe the possibility to implement this feature with more emulation options.",
-      "stacks" : ["Python 2 and 3", "Android", "MongoDB"]
+      "description": "An plugin module allows Cuckoodroid to implement API hook using Frida JavaScript.",
+      "stacks" : ["Python", "Android", "JavaScript"]
     },
     {
       "projectName": "GoGoCoach",
@@ -31,7 +31,7 @@
       "repo": "go-go-coach",
       "url": "https://github.com/Felixho19/go-go-coach",
       "description": "An Android appliction for matching users and coaches, based on Geolocation.",
-      "stacks" : ["Android", "Firebase", "Google API"]
+      "stacks" : ["Android", "Firebase", "Google Map API"]
     },
     {
       "projectName": "Tutoria - Tutor-broking system for university students",
@@ -40,16 +40,7 @@
       "repo": "Tutoria",
       "url": "https://github.com/Felixho19/Tutoria",
       "description": "Timeslot reservation system.",
-      "stacks" : ["Django", "JQuery", "SQlite"]
-    },
-    {
-      "projectName": "SG airline app challenge for lounge services",
-      "logo": "/images/sghack.png",
-      "owner": "Felixho19",
-      "repo": "SGapp",
-      "url": "https://felixho19.github.io/SGapp/",
-      "description": "A showcase web application.",
-      "stacks" : ["ReactJS", "Bootstrap", "Material-UI"]
+      "stacks" : ["Django", "JQuery", "SQLite", "Celery", "Redis"]
     }
   ],
   "experiences": [

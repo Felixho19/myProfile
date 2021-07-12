@@ -6,7 +6,7 @@ class Greetings extends React.Component {
         return <Container>
             <Row>
                 <Col className="page">
-                    <p>Hi, this static website is using for exhibiting my worked projects.</p>
+                    <p>Hi, this static website is using for exhibiting my coursework and side projects.</p>
                     <p>Feel free to contact me via Linkedin. (Link at the bottom)</p>
                 </Col>
             </Row>

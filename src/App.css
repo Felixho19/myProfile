@@ -31,15 +31,19 @@ a:hover {
 }
 
 /* Projects */
+.cardDivImage{
+  max-width:300px;
+  max-height:75px;
+}
 .cardImage {
   margin: 1px;
   border-radius: 55;
-  height: 6rem;
+  width: auto;
+  height: 75px;
 }
 .card-deck .card {
   padding: 2em;
 }
-
 .card-deck {
   display: flex;
   margin-right: 5%;

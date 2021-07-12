@@ -36,7 +36,9 @@ export default function ProjectCard(props){
     });
     return (
         <Card key={key} className="card" style={{width: '18rem'}}>
-          <Card.Img className="cardImage" varient="top" src={process.env.PUBLIC_URL+project.logo} alt={project.projectName}/>
+          <div className="cardDivImage">
+            <Card.Img className="cardImage" varient="top" src={process.env.PUBLIC_URL+project.logo} alt={project.projectName}/>
+          </div>
           <Card.Body>
             <Card.Title><a href={project.url} rel="noopener noreferrer" target="_blank" >{project.projectName}</a></Card.Title>
             <Card.Text>{project.description}</Card.Text>
