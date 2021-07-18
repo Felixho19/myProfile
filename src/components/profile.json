@@ -4,20 +4,19 @@
             "name" : "Spoken Languages",
             "items" : [
                 "Cantonese: Native",
-                "English: Business",
+                "English: Advanced",
                 "Japanese: Basic"
             ]
         },
         {
             "name" : "Programming Languages",
             "items" : [
-                "Python 2/3",
-                "C/C++",
-                "Java 8",
-                "Haskell",
-                "JavaScript ES6",
+                "Python",
+                "Java",
                 "Bash",
+                "JavaScript",
                 "SQL",
+                "C/C++",
                 "PHP"
             ]
         },
@@ -31,27 +30,29 @@
         {
             "name" : "Web development",
             "items" : [
-                "Web frontend framework: React, Vue.js, Angular.js, JQuery",
-                "Web backend framework: Django, Flask",
-                "HTML5, CSS",
-                "MEAN stack (MongoDB + Express.js + React + Node.js)",
-                "Mule API"
+                "ReactJS", 
+                "Vue.js", 
+                "Angular.js",
+                "Django",
+                "Flask",
+                "HTML5", 
+                "CSS", 
+                "JQuery",
+                "Mule"
             ]
         },
         {
             "name" : "Mobile development",
             "items" : [
-                "Android app (Java)",
-                "Firebase"
+                "Android"
             ]
         },
         {
             "name" : "DevOps",
             "items" : [
                 "Version Control: Git",
-                "Cloud Platform: AWS, Azure",
-                "CI/CD: Jenkins, ansible-playbook",
-                "Docker"
+                "Cloud Platform: AWS",
+                "CI/CD: Ansible-playbook, Docker, Jenkins, Kubernetes"
             ]
         }
     ]

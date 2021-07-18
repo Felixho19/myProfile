@@ -39,7 +39,7 @@
       "owner": "Felixho19",
       "repo": "Tutoria",
       "url": "https://github.com/Felixho19/Tutoria",
-      "description": "Timeslot reservation system.",
+      "description": "A coursework about timeslot reservation system.",
       "stacks" : ["Django", "JQuery", "SQLite", "Celery", "Redis"]
     }
   ],
@@ -49,7 +49,7 @@
       "url": "https://www.pccwsolutions.com/site/en/home",
       "roles": [
         {
-          "title": "Graduate Trainee",
+          "title": "Graduate Trainee - Software Engineer",
           "start_date": "Aug 2019",
           "end_date": "Current"
         }
