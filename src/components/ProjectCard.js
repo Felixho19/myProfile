@@ -5,7 +5,7 @@ import { faEye, faStar } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function ProjectCard(props){
-    const {project, key} = props;
+    const {project} = props;
     const delaySecond = 1;
     const [starCount, setStarCount] = useState(0);
     const [watchCount, setWatchCount] = useState(0);
@@ -35,7 +35,7 @@ export default function ProjectCard(props){
       };
     });
     return (
-        <Card key={key} className="card" style={{width: '18rem'}}>
+        <Card className="card" style={{width: '18rem'}}>
           <div className="cardDivImage">
             <Card.Img className="cardImage" varient="top" src={process.env.PUBLIC_URL+project.logo} alt={project.projectName}/>
           </div>
