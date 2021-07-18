@@ -7,7 +7,7 @@ export default function Banner(){
             <Container>
                 <h1 className="banner">Felix Ho</h1>
                 <div>
-                    <p className="desc">Self-motivated developer. Open for worldwide software engineer opportunities.</p>
+                    <p className="desc">Open for worldwide software engineer opportunities.</p>
                 </div>
             </Container>
         </Jumbotron>
